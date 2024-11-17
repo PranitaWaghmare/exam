@@ -1,0 +1,23 @@
+def lambda_handler(event, context):
+    course = event.get('qoeryStringParameters', {}).get('code')
+
+    if course == "HPCSA":
+        return {
+            'statusCode': 200,
+            'body': "Welcome to HPCSA"
+        }
+    elif course == "DITTIS":
+        return {
+            'statusCode': 200,
+            'body': "welcome to ditiss"
+        }
+    elif course == "dbda":
+        return {
+            'statusCode': 200,
+            'body': "welcome to dbda"
+        }
+    else:
+        return {
+            'statusCode': 400,
+            'body': "invalid course"
+
