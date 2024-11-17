@@ -1,23 +1,13 @@
-def lambda_handler(event, context):
-    course = event.get('qoeryStringParameters', {}).get('code')
 
-    if course == "HPCSA":
-        return {
-            'statusCode': 200,
-            'body': "Welcome to HPCSA"
-        }
-    elif course == "DITTIS":
-        return {
-            'statusCode': 200,
-            'body': "welcome to ditiss"
-        }
-    elif course == "dbda":
-        return {
-            'statusCode': 200,
-            'body': "welcome to dbda"
-        }
+def lambda_handler(event, context):
+    code = event.get('code')
+
+    if code == "001":
+        return "this is server"
+    elif code == "002":
+        return "this is node1"
+    elif code == "003":
+        return "this is a router"
     else:
-        return {
-            'statusCode': 400,
-            'body': "invalid course"
+        return "Invalid code"
 
